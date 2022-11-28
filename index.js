@@ -2,6 +2,8 @@ import express from 'express'
 import { routeToArea, routeToDrone, routeToTrees,routeToDroneActivities } from './routes/routes.js';
 
 
+
+
 const app = express()
 
 app.get('/', async (req, res) => {
