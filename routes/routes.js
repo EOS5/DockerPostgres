@@ -3,6 +3,8 @@ import { getAreas, getAreasById, addArea ,removeAreaById, updateAreaName} from "
 import { getDrone, getDronesById, addDrone, removeDroneById, updateDroneLastmaintenance} from "../app/functionDrone.js";
 import { getTrees, getTreesById, addTree, removeTreeById, updateTreedrone_id} from "../app/functionTrees.js";
 import { getdrone_activities, getdrone_activitiesById, addDroneActivity, removeDroneActivityById, updateDroneActivitydrone_id} from '../app/functionDroneActivities.js'
+
+
 const routeToArea = Router()
 const routeToDrone = Router()
 const routeToTrees = Router()
