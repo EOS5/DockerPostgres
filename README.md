@@ -1,7 +1,8 @@
 # DockerPostgres
 
 <h1>This repository was a test</h1>
-<p>In this repository you will find how i created a postgres Database and added pgAdmin using Docker <br></p>
+<p>In this repository you will find how i created a postgres Database and added pgAdmin using Docker. <br>
+This project contains also a verry basic CRUD with express</p>
 
 <h1></h1>
 
@@ -20,3 +21,5 @@ docker-compose up
 ```command
 npm start
 ```
+
+<h3>If you want to test this project, you can also install Postman if you don't have it</h3>
