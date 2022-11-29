@@ -18,12 +18,12 @@ const createDroneActivitiesFromMaintenance = (req, res) => {
         if (error) throw error;
         res.status(200).send("View created")
     });
-}
+};
 const getView = (req, res) => {
     client.query("SELECT * FROM drone_activities_from_maintenance;", (error, result) => {
         if(error) throw error;
         res.status(200).json(result.rows)
     });
-}
+};
 
 export {createDroneActivitiesFromMaintenance, getView}

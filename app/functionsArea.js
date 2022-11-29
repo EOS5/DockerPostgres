@@ -7,16 +7,16 @@ const getAreas = (req, res) => {
     .query('SELECT * from areas', (error,result) => {
         if (error) throw error;
         res.status(200).json(result.rows);
-    })
-} 
+    });
+} ;
 const getAreasById = (req, res) => {
     const id = parseInt(req.params.id);
     return client
     .query('SELECT * from areas Where area_id =$1',[id], (error, result) => {
         if(error) throw error;
         res.status(200).json(result.rows);
-    })
-}
+    });
+};
 
 const addArea = (req, res) => {
     const {area_id, surface, name } = req.body;
@@ -26,8 +26,8 @@ const addArea = (req, res) => {
     (error,result) => {
         if(error) throw error;
         res.status(201).send("Area created succesfully");
-    })
-}
+    });
+};
 const removeAreaById = (req, res) => {
     const id = parseInt(req.params.id);
     return client
@@ -35,14 +35,14 @@ const removeAreaById = (req, res) => {
         const noAreaFound = !result.rows.length;
         if (noAreaFound){
             res.send("area does not exist");
-        }
+        };
 
         client.query('DELETE FROM areas WHERE area_id = $1'[id], (error,result) => {
             if (error) throw error;
             res.status(200).send("area deleted succesfully");
-        })
-    })
-}
+        });
+    });
+};
 
 const updateAreaName = (req, res) => {
     const id = parseInt(req.params.id);
@@ -52,14 +52,14 @@ const updateAreaName = (req, res) => {
         const noAreaFound = !result.rows.length;
         if (noAreaFound){
             res.send("area does not exist");
-        }
+        };
 
         client.query('UPDATE areas SET name = $1 WHERE area_id = $2',
         [name,id], 
         (error,result) => {
             if (error) throw error;
             res.status(200).send("area updated");
-        })
-    })
-}
+        });
+    });
+};
 export { getAreas, getAreasById, addArea ,removeAreaById, updateAreaName}
