@@ -1,5 +1,5 @@
 import express from 'express'
-import { routeToArea, routeToDrone, routeToTrees,routeToDroneActivities } from './routes/routes.js';
+import { routeToArea, routeToDrone, routeToTrees,routeToDroneActivities, routeToFancyQuery } from './routes/routes.js';
 
 
 
@@ -15,5 +15,6 @@ app.use('/areas',  routeToArea);
 app.use('/drones', routeToDrone);
 app.use('/trees', routeToTrees);
 app.use('/droneActivities',routeToDroneActivities);
+app.use('/fancyQueries', routeToFancyQuery);
 app.listen(3000);
 

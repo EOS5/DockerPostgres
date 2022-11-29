@@ -1,15 +1,6 @@
-import pkg from 'pg';
-const { Client } = pkg;
+import { client } from "./connexion";
 
-const client = new Client({
-    user: 'admin',
-    host: 'localhost',
-    database: 'bio_icare_drone',
-    password: 'admin',
-    port: 5432,
-})
-client.connect()
-
+client.connect();
 
 const getTrees = (req, res) => {
     return client

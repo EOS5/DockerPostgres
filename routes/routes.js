@@ -3,12 +3,14 @@ import { getAreas, getAreasById, addArea ,removeAreaById, updateAreaName} from "
 import { getDrone, getDronesById, addDrone, removeDroneById, updateDroneLastmaintenance} from "../app/functionDrone.js";
 import { getTrees, getTreesById, addTree, removeTreeById, updateTreedrone_id} from "../app/functionTrees.js";
 import { getdrone_activities, getdrone_activitiesById, addDroneActivity, removeDroneActivityById, updateDroneActivitydrone_id} from '../app/functionDroneActivities.js'
+import { createDroneActivitiesFromMaintenance, getView } from "../app/fancyQueries.js";
 
 
 const routeToArea = Router()
 const routeToDrone = Router()
 const routeToTrees = Router()
 const routeToDroneActivities = Router()
+const routeToFancyQuery = Router()
 
 routeToArea.get("/",getAreas);
 routeToArea.post("/",addArea);
@@ -34,4 +36,7 @@ routeToDroneActivities.get("/:id", getdrone_activitiesById);
 routeToDroneActivities.put("/:id", updateDroneActivitydrone_id);
 routeToDroneActivities.delete("/:id", removeDroneActivityById);
 
-export {routeToArea, routeToDrone, routeToTrees, routeToDroneActivities}
+routeToFancyQuery.get("/",createDroneActivitiesFromMaintenance);
+routeToFancyQuery.get("/view",getView);
+
+export {routeToArea, routeToDrone, routeToTrees, routeToDroneActivities, routeToFancyQuery}
