@@ -1,6 +1,4 @@
-import { client } from "./connexion";
-
-client.connect();
+import { client } from "./connexion.js";
 
 
 const getDrone = (req, res) => {
@@ -9,7 +7,7 @@ const getDrone = (req, res) => {
         if (error) throw error;
         res.status(200).json(result.rows);
     });
-} ;
+};
 const getDronesById = (req, res) => {
     const id = parseInt(req.params.id);
     return client
@@ -63,4 +61,5 @@ const updateDroneLastmaintenance = (req, res) => {
         });
     });
 };
+
 export { getDrone, getDronesById, addDrone ,removeDroneById, updateDroneLastmaintenance}

@@ -1,6 +1,5 @@
-import { client } from "./connexion";
+import { client } from "./connexion.js";
 
-client.connect();
 
 const getdrone_activities = (req, res) => {
     return client

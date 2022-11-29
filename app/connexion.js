@@ -7,6 +7,7 @@ const client = new Client({
     database: 'bio_icare_drone',
     password: 'admin',
     port: 5432,
-});
+})
+client.connect();
 
 export { client }
