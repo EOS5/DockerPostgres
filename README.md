@@ -15,6 +15,10 @@ If you already have all of them, ignore this little message</p>
 <br></br>
 
 ```command
+npm install
+```
+
+```command
 docker-compose up
 ```
 
