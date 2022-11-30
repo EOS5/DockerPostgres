@@ -1,14 +1,14 @@
 import { client } from "./connexion.js";
 
 
-const getdrone_activities = (req, res) => {
+const getDroneActivities = (req, res) => {
     return client
     .query('SELECT * from drone_activities', (error,result) => {
         if (error) throw error;
         res.status(200).json(result.rows);
     });
 } ;
-const getdrone_activitiesById = (req, res) => {
+const getDroneActivitiesById = (req, res) => {
     const id = parseInt(req.params.id);
     return client
     .query('SELECT * from drone_activities Where drone_activity_id =$1',[id], (error, result) => {
@@ -61,4 +61,4 @@ const updateDroneActivitydrone_id = (req, res) => {
         });
     });
 };
-export { getdrone_activities, getdrone_activitiesById, addDroneActivity ,removeDroneActivityById, updateDroneActivitydrone_id}
+export { getDroneActivities, getDroneActivitiesById, addDroneActivity ,removeDroneActivityById, updateDroneActivitydrone_id}

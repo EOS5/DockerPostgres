@@ -2,7 +2,7 @@ import { Router } from "express";
 import { getAreas, getAreasById, addArea ,removeAreaById, updateAreaName} from "../app/functionsArea.js";
 import { getDrone, getDronesById, addDrone, removeDroneById, updateDroneLastmaintenance} from "../app/functionDrone.js";
 import { getTrees, getTreesById, addTree, removeTreeById, updateTreedrone_id} from "../app/functionTrees.js";
-import { getdrone_activities, getdrone_activitiesById, addDroneActivity, removeDroneActivityById, updateDroneActivitydrone_id} from '../app/functionDroneActivities.js'
+import { getDroneActivities, getDroneActivitiesById, addDroneActivity, removeDroneActivityById, updateDroneActivitydrone_id} from '../app/functionDroneActivities.js'
 import { createView, view } from "../app/fancyQueries.js";
 
 
@@ -30,9 +30,9 @@ routeToTrees.get("/:id", getTreesById);
 routeToTrees.put("/:id", updateTreedrone_id);
 routeToTrees.delete("/:id", removeTreeById);
 
-routeToDroneActivities.get("/",getdrone_activities);
+routeToDroneActivities.get("/",getDroneActivities);
 routeToDroneActivities.post("/",addDroneActivity);
-routeToDroneActivities.get("/:id", getdrone_activitiesById);
+routeToDroneActivities.get("/:id", getDroneActivitiesById);
 routeToDroneActivities.put("/:id", updateDroneActivitydrone_id);
 routeToDroneActivities.delete("/:id", removeDroneActivityById);
 
